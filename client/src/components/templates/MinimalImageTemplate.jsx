@@ -12,36 +12,6 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
         });
     };
 
-    // const imageSrc = useMemo(() => {
-    //     const image = data?.personal_info?.image;
-
-    //     if (!image) return null;
-
-    //     if (typeof image === "string") return image;
-
-    //     if (image instanceof File || image instanceof Blob) {
-    //         try {
-    //             return URL.createObjectURL(image);
-    //         } catch (err) {
-    //             console.error("Invalid image object:", image);
-    //             return null;
-    //         }
-    //     }
-
-    //     return null;
-    // }, [data?.personal_info?.image]);
-
-    // useEffect(() => {
-    //     return () => {
-    //         if (
-    //             imageSrc &&
-    //             typeof data?.personal_info?.image !== "string"
-    //         ) {
-    //             URL.revokeObjectURL(imageSrc);
-    //         }
-    //     };
-    // }, [imageSrc]);
-
     const imageSrc = data?.personal_info?.image || null;
 
     return (
