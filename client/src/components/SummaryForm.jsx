@@ -9,7 +9,6 @@ function SummaryForm({ data, onChange, setResumeData }) {
     onChange(e.target.value)
   }
 const enhanceSummary = async () => {
-  // ✅ SAFE VALUE
   const text = (data || "").trim();
 
   if (!text) {
@@ -19,7 +18,7 @@ const enhanceSummary = async () => {
 
   try {
     const res = await api.post("/ai/enhance-summary", {
-      text: text   // ✅ guaranteed string
+      text: text   
     });
 
     onChange(res.data.data.enhancedText);
