@@ -42,35 +42,12 @@ const handleImageUpload = async (file) => {
       }
     }));
 
-    toast.success("Image uploaded ✅");
+    toast.success("Image uploaded");
 
   } catch (err) {
-    toast.error("Image upload failed ❌");
+    toast.error("Image upload failed");
   }
 };
-
-  // const imageUrl = useMemo(() => {
-  //   if (!data?.image) return null;
-
-  //   if (typeof data.image === "string") { return data.image; }
-
-  //   if (data.image instanceof File || data.image instanceof Blob) {
-  //     try {
-  //       return URL.createObjectURL(data.image);
-  //     } catch {
-  //       return null;
-  //     }
-  //   }
-  //   return null;
-  // }, [data?.image]);
-
-  // useEffect(() => {
-  //   return () => {
-  //     if (imageUrl && typeof data.image !== "string") {
-  //       URL.revokeObjectURL(imageUrl);
-  //     }
-  //   };
-  // }, [imageUrl]);
 
   const fields = [
     { key: "full_name", label: "Full Name", icon: User, type: "text", required: true },
