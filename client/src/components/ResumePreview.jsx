@@ -27,8 +27,6 @@ function ResumePreview({ data, template, accentColor = "#3B82F6", classes = "" }
       >
         {renderTemplate()}
       </div>
-
-      {/* ✅ FIXED PRINT CSS */}
       <style>
         {`
         @page {
