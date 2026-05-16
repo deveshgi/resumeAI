@@ -18,7 +18,6 @@ export const getUserById = handler(async (req, res) => {
       "User fetched successfully"
     )
   );
-
 })
 
 export const getCurrentUser = handler(async (req, res) => {
@@ -26,18 +25,3 @@ export const getCurrentUser = handler(async (req, res) => {
     .status(200)
     .json(new ApiResponse(200, req.user, "User fetched successfully"));
 });
-// export const getCurrentUser = handler(async (req, res) => {
-//   const user = req.user;
-
-//   if (!user) {
-//     throw new ApiError(401, "Unauthorized");
-//   }
-
-//   return res.status(200).json(
-//     new ApiResponse(
-//       200,
-//       { user },
-//       "Current user fetched successfully"
-//     )
-//   );
-// });
