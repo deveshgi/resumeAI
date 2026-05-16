@@ -90,21 +90,21 @@ export const updateResume = handler(async (req, res) => {
 
   let updateData = {};
 
-  // ✅ handle JSON + form-data
+  // handle JSON + form-data
   if (req.body.resumeData) {
     updateData = JSON.parse(req.body.resumeData);
   } else {
     updateData = req.body;
   }
 
-  // ✅ handle image upload
+  // handle image upload
   if (req.file) {
     const imageUrl = await uploadToImageKit(
       req.file,
       req.body.removeBackground === "true"
     );
 
-    // 👇 adjust based on your schema
+    // adjust based on your schema
     updateData.personal_info = {
       ...(updateData.personal_info || {}),
       image: imageUrl
