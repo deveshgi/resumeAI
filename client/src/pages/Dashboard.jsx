@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 417972b (updated code)
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlinePlusCircle } from "react-icons/hi2";
