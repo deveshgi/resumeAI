@@ -1,7 +1,10 @@
 import fs from "fs";
-import { imagekit } from "./imageKit.js";
+// import imagekit from "./imageKit.js";
+import { getImageKit } from "./imageKit.js";
+
 
 export const uploadToImageKit = async (file, removeBackground = false) => {
+  const imagekit = getImageKit();
   try {
     const response = await imagekit.upload({
       file: fs.readFileSync(file.path), // buffer
