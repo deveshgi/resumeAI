@@ -1,5 +1,4 @@
 import fs from "fs";
-// import imagekit from "./imageKit.js";
 import { getImageKit } from "./imageKit.js";
 
 

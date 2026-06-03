@@ -30,11 +30,11 @@ export const refreshAccessToken = handler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     path: "/"
   };
-
+  
   return res
     .cookie("accessToken", accessToken, options)
     .cookie("refreshToken", refreshToken, options)
@@ -53,8 +53,8 @@ export const registerUser = handler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     path: "/"
   };
 
@@ -83,8 +83,8 @@ export const loginUser = handler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     path: "/"
   };
 
