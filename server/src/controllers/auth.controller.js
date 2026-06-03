@@ -30,7 +30,7 @@ export const refreshAccessToken = handler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: process.env.NODE_ENV || false,
+    secure: false,
     sameSite: "lax",
     path: "/"
   };

@@ -12,8 +12,6 @@ export const getUserResumes = handler(async (req, res) => {
     throw new ApiError(401, "Unauthorized");
   }
 
-  // const resumes = await Resume.find({ userId })
-  //   .sort({ createdAt: -1 });
   const [resumes, totalResumes] = await Promise.all([
     Resume.find({ userId }).sort({ createdAt: -1 }),
     Resume.countDocuments({ userId })
@@ -56,7 +54,6 @@ export const getResumeById = handler(async (req, res) => {
 
 export const createResume = handler(async (req, res) => {
   const userId = req.user?._id;
-  // const { title } = req.body;
 
   if (!userId) {
     throw new ApiError(401, "Unauthorized");
